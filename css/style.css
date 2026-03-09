@@ -309,3 +309,235 @@ h1, h2, h3 {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================= */
+/* DETAIL PAGE STYLES                        */
+/* ========================================= */
+
+.detail-hero {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    margin-top: var(--nav-height);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* Align content to bottom */
+    padding-bottom: 60px;
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--bg-dark) 0%, rgba(15, 16, 20, 0.4) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.detail-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px; /* from detail.md maximum width */
+    margin: 0 auto;
+}
+
+.game-title {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    color: var(--text-primary);
+}
+
+.game-reviews {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: #fbbf24; /* Star gold */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-count {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.game-price {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: var(--primary); /* Neon green */
+    margin-bottom: 30px;
+    text-shadow: var(--glow);
+}
+
+.detail-hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.glow-neon {
+    box-shadow: 0 0 15px rgba(163, 255, 18, 0.4);
+    transition: box-shadow 0.3s ease, transform 0.3s;
+}
+
+.glow-neon:hover {
+    box-shadow: 0 0 25px rgba(163, 255, 18, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-primary.glow-neon {
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary.glow-neon {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-secondary.glow-neon:hover {
+    background: rgba(163, 255, 18, 0.1);
+}
+
+/* Detail Main Grid Structure */
+.detail-main {
+    max-width: 1200px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Glass Panel Component */
+.glass-panel {
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 30px;
+}
+
+.detail-description h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.detail-description p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    margin-bottom: 25px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* Sidebar Styling */
+.detail-sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.suggested-games {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.suggested-card {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.suggested-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.suggested-card img {
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suggested-info {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.suggested-info h4 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.suggested-info .price {
+    font-size: 14px;
+}
+
+/* Responsive adjustments for detail page */
+@media (max-width: 900px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-title {
+        font-size: 48px;
+    }
+}

@@ -34,16 +34,17 @@
     <!-- Cinematic Hero Section -->
     <header class="detail-hero">
         <div class="hero-video-container">
-            <video class="hero-video" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" autoplay loop muted playsinline></video>
+            <video id="dyn-video" class="hero-video" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" autoplay loop muted playsinline></video>
+            <div id="dyn-carousel" class="hero-carousel" style="display: none;"></div>
             <div class="hero-gradient-overlay"></div>
         </div>
         
         <div class="detail-hero-content container">
-            <h1 class="game-title">TEARS OF STEEL</h1>
+            <h1 id="dyn-title" class="game-title">TEARS OF STEEL</h1>
             <div class="game-reviews">
                 5.0 ★★★★★ <span class="review-count">(124 reviews)</span>
             </div>
-            <div class="game-price">Free to Play</div>
+            <div id="dyn-price" class="game-price">Free to Play</div>
             <div class="detail-hero-actions">
                 <button class="btn-secondary glow-neon">Add to Cart</button>
                 <button class="btn-primary glow-neon big">Buy Now</button>
@@ -57,12 +58,12 @@
             <!-- Left Column: Description -->
             <div class="detail-description glass-panel reveal">
                 <h2>PRODUCT DESCRIPTION</h2>
-                <ul class="feature-list">
+                <ul id="dyn-features" class="feature-list">
                     <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Stunning Cyberpunk Environments</li>
                     <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Intense PvP Mech Battles</li>
                     <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced Cybernetic Upgrades</li>
                 </ul>
-                <p>Join the resistance in this high-octane sci-fi shooter. Battle massive mech-snipers and cyborgs in a dystopian future to save humanity.</p>
+                <p id="dyn-desc">Join the resistance in this high-octane sci-fi shooter. Battle massive mech-snipers and cyborgs in a dystopian future to save humanity.</p>
             </div>
 
             <!-- Right Column: Suggested Games -->
@@ -97,5 +98,6 @@
 
     <!-- Scripts -->
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/detail-loader.js"></script>
 </body>
 </html>

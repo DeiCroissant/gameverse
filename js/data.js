@@ -5,35 +5,34 @@ export const gamesData = {
         mediaType: "video",
         videoSrc: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
         description: "Join the resistance in this high-octane sci-fi shooter. Battle massive mech-snipers and cyborgs in a dystopian future to save humanity.",
-        features: ["Stunning Cyberpunk Environments", "Intense PvP Mech Battles", "Advanced Cybernetic Upgrades"]
+        features: ["Stunning Cyberpunk Environments", "Intense PvP Mech Battles", "Advanced Cybernetic Upgrades"],
+        systemRequirements: { os: "Windows 10", processor: "Intel Core i7", memory: "16 GB RAM", graphics: "NVIDIA RTX 2060", storage: "50 GB available space" }
     },
     'elden-ring': {
         title: "ELDEN RING",
         price: "$59.99",
         mediaType: "video",
-        videoSrc: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+        videoSrc: "assets/videos/elden-ring.mp4",
         description: "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
-        features: ["Vast Seamless Open World", "Deep Tactical Combat", "Rich Lore Crafted by George R.R. Martin"]
+        features: ["Vast Seamless Open World", "Deep Tactical Combat", "Rich Lore Crafted by George R.R. Martin"],
+        systemRequirements: { os: "Windows 10", processor: "INTEL CORE I5-8400 or AMD RYZEN 3 3300X", memory: "12 GB RAM", graphics: "NVIDIA GEFORCE GTX 1060 3 GB", storage: "60 GB available space" }
     },
     'god-of-war': {
         title: "GOD OF WAR RAGNARÖK",
         price: "$69.99",
         mediaType: "video",
-        videoSrc: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+        videoSrc: "assets/videos/god-of-war.mp4",
         description: "Join Kratos and Atreus on a mythic journey for answers before Ragnarök arrives. Journey through dangerous and stunning landscapes.",
-        features: ["Visceral Physical Combat", "Emotional Father-Son Story", "Explore the Nine Realms"]
+        features: ["Visceral Physical Combat", "Emotional Father-Son Story", "Explore the Nine Realms"],
+        systemRequirements: { os: "Windows 10 64-bit", processor: "Intel i5-2500K or AMD Ryzen 3 1200", memory: "8 GB RAM", graphics: "NVIDIA GTX 960 or AMD R9 290X", storage: "70 GB available space" }
     },
     'valorant': {
         title: "VALORANT",
         price: "Free to Play",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070",
-            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070",
-            "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/valorant.mp4",
         description: "Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and defend your side using sharp gunplay and tactical abilities.",
-        features: ["5v5 Tactical Shooter", "Unique Character Abilities", "Global Competitive Matchmaking"]
+        features: ["5v5 Tactical Shooter", "Unique Character Abilities", "Global Competitive Matchmaking", "Cross-Play"]
     },
     'the-last-of-us': {
         title: "THE LAST OF US PART I",
@@ -59,7 +58,7 @@ export const gamesData = {
         description: "The World's Game brings the beautiful game to the pitch, with both men's and women's FIFA World Cup tournaments, and the most advanced gameplay ever.",
         features: ["HyperMotion2 Technology", "Women's Club Football", "Cross-Play Features"]
     },
-    'cyberpunk': {
+    'cyberpunk-2077': {
         title: "CYBERPUNK 2077",
         price: "$29.99",
         mediaType: "images",
@@ -71,7 +70,7 @@ export const gamesData = {
         description: "An open-world, action-adventure RPG set in the dark future of Night City — a megalopolis obsessed with power, glamour, and body modification.",
         features: ["Vast Sci-Fi Open World", "Deep Character Customization", "Branching Narrative Paths"]
     },
-    'horizon': {
+    'horizon-forbidden-west': {
         title: "HORIZON FORBIDDEN WEST",
         price: "$39.99",
         mediaType: "images",
@@ -86,16 +85,12 @@ export const gamesData = {
     'ghost-of-tsushima': {
         title: "GHOST OF TSUSHIMA",
         price: "$19.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1535565576063-a20c9ef00529?q=80&w=2070",
-            "https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070",
-            "https://images.unsplash.com/photo-1578306857912-78d10c0e3592?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/ghost-of.mp4",
         description: "Forge a new path and wage an unconventional war for the freedom of Tsushima in this critically acclaimed open-world action-adventure.",
         features: ["Masterful Katana Combat", "Breathtaking Open World", "Rich Historical Setting"]
     },
-    'gran-turismo': {
+    'gran-turismo-7': {
         title: "GRAN TURISMO 7",
         price: "$49.99",
         mediaType: "images",

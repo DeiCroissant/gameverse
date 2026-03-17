@@ -73,6 +73,24 @@ function initDynamicDetails() {
         });
     }
 
+    // System Requirements
+    const sysReqElem = document.getElementById('dyn-sys-req');
+    const sysReqTitle = sysReqElem ? sysReqElem.previousElementSibling : null;
+
+    if (sysReqElem && game.systemRequirements) {
+        if (sysReqTitle) sysReqTitle.style.display = 'block';
+        sysReqElem.style.display = 'block';
+        sysReqElem.innerHTML = '';
+        for (const [key, value] of Object.entries(game.systemRequirements)) {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${key.toUpperCase()}:</strong> ${value}`;
+            sysReqElem.appendChild(li);
+        }
+    } else if (sysReqElem) {
+        if (sysReqTitle) sysReqTitle.style.display = 'none';
+        sysReqElem.style.display = 'none';
+    }
+
     // Update Headings and Metadata
     document.title = game.title + " - GameVerse";
     

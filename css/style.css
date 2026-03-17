@@ -316,7 +316,7 @@ h1, h2, h3 {
 
 .detail-hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     margin-top: var(--nav-height);
     overflow: hidden;
@@ -350,7 +350,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, var(--bg-dark) 0%, rgba(15, 16, 20, 0.4) 60%, transparent 100%);
+    background: linear-gradient(to top, var(--bg-dark) 0%, transparent 20%);
     pointer-events: none;
     z-index: 1;
 }
@@ -359,8 +359,7 @@ h1, h2, h3 {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 500px; /* from detail.md maximum width */
-    margin: 0 0 0 10%;
+    margin-bottom: 40px;
 }
 
 .game-title {
@@ -470,6 +469,24 @@ h1, h2, h3 {
     color: var(--text-primary);
     margin-bottom: 12px;
     font-size: 16px;
+}
+
+.sys-req-list {
+    list-style: none;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.sys-req-list li {
+    margin-bottom: 10px;
+}
+
+.sys-req-list li strong {
+    color: var(--text-primary);
 }
 
 /* Sidebar Styling */

@@ -7,7 +7,7 @@
 ---
 
 **Project:** GameVerse
-**Generated:** 2026-03-09 20:36:11
+**Generated:** 2026-03-23 21:35:29
 **Category:** Gaming
 
 ---
@@ -163,11 +163,11 @@
 
 ### Page Pattern
 
-**Pattern Name:** Video-First Hero
+**Pattern Name:** FAQ/Documentation Landing
 
-- **Conversion Strategy:** 86% higher engagement with video. Add captions for accessibility. Compress video for performance.
-- **CTA Placement:** Overlay on video (center/bottom) + Bottom section
-- **Section Order:** 1. Hero with video background, 2. Key features overlay, 3. Benefits section, 4. CTA
+- **Conversion Strategy:** Reduce support tickets. Track search analytics. Show related articles. Contact escalation path.
+- **CTA Placement:** Search bar prominent + Contact CTA for unresolved questions
+- **Section Order:** 1. Hero with search bar, 2. Popular categories, 3. FAQ accordion, 4. Contact/support CTA
 
 ---
 

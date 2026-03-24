@@ -37,12 +37,8 @@ export const gamesData = {
     'the-last-of-us': {
         title: "THE LAST OF US PART I",
         price: "$69.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=2070",
-            "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070",
-            "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/thelastofus.mp4",
         description: "Experience the emotional storytelling and unforgettable characters in Joel and Ellie's harrowing journey across a post-pandemic United States.",
         features: ["Award-Winning Story", "Intense Stealth/Action", "Completely Rebuilt for Next-Gen"]
     },
@@ -61,24 +57,16 @@ export const gamesData = {
     'cyberpunk-2077': {
         title: "CYBERPUNK 2077",
         price: "$29.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=2070",
-            "https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=2070",
-            "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/cyberpunk.mp4",
         description: "An open-world, action-adventure RPG set in the dark future of Night City — a megalopolis obsessed with power, glamour, and body modification.",
         features: ["Vast Sci-Fi Open World", "Deep Character Customization", "Branching Narrative Paths"]
     },
     'horizon-forbidden-west': {
         title: "HORIZON FORBIDDEN WEST",
         price: "$39.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?q=80&w=2070",
-            "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2070",
-            "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/horizon.mp4",
         description: "Join Aloy as she braves the Forbidden West—a majestic but dangerous frontier that conceals mysterious new threats.",
         features: ["Stunning Post-Apocalyptic Landscape", "Tactical Machine Combat", "Underwater Exploration"]
     },
@@ -93,25 +81,25 @@ export const gamesData = {
     'gran-turismo-7': {
         title: "GRAN TURISMO 7",
         price: "$49.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2070",
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070",
-            "https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/gran.mp4",
         description: "From classic vehicles and bleeding-edge concept cars to real-life tracks, experience the ultimate driving simulator with unmatched realism.",
         features: ["400+ Highly Detailed Cars", "Realistic Handling Physics", "Extensive Customization"]
     },
     'spider-man': {
         title: "SPIDER-MAN: MILES MORALES",
         price: "$29.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1534809027769-b00d750a6bac?q=80&w=2070",
-            "https://images.unsplash.com/photo-1608889175123-8ee362201b87?q=80&w=2070",
-            "https://images.unsplash.com/photo-1559124449-6f5dfbe8d867?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/marvel.mp4",
         description: "Rise up as Miles Morales seamlessly webslings through Marvel's New York, mastering explosive new powers to become his own Spider-Man.",
         features: ["Bio-Electric Venom Attacks", "Stunning Snowy New York", "Fluid Web-Swinging Mechanics"]
+    },
+    'the-witcher-3': {
+        title: "THE WITCHER 3",
+        price: "$9.99",
+        mediaType: "video",
+        videoSrc: "assets/videos/wither3.mp4",
+        description: "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will.",
+        features: ["Massive Open World", "Deep Role-Playing", "Dynamic Weather System"]
     }
 };

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides - GameVerse</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Glass Navigation (Matches index.html) -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">GAME<span style="color: #fff">VERSE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Store</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="guide.html" class="active">Guide</a></li>
+        </ul>
+        <button id="nav-login-btn" class="btn-primary glow">Login</button>
+    </nav>
+
+    <!-- Hero Search Section -->
+    <header class="guide-hero">
+        <div class="hero-gradient-overlay" style="background: linear-gradient(to bottom, transparent 0%, var(--bg-dark) 100%);"></div>
+        <div class="container guide-hero-content">
+            <h1 class="guide-title text-glow">GameVerse <span style="color:var(--primary)">Wiki</span></h1>
+            <p class="guide-subtitle">Search strategies, builds, and walkthroughs for thousands of games.</p>
+            <div class="search-bar-wrapper">
+                <i class='bx bx-search search-icon'></i>
+                <input type="text" class="guide-search-input" placeholder="Search guides (e.g., 'Elden Ring Bosses')...">
+                <button class="btn-primary search-btn">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container guide-container">
+        
+        <!-- Left Column: Tabular List of Guides -->
+        <div class="guide-content">
+            <div class="guide-table-wrapper module-glass">
+                <div class="guide-table-header">
+                    <h2>Latest Guides</h2>
+                    <div class="filter-sort">
+                        <select class="glass-select">
+                            <option>All Platforms</option>
+                            <option>PC</option>
+                            <option>PlayStation</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <table class="guide-table">
+                    <thead>
+                        <tr>
+                            <th>Game / Guide Title</th>
+                            <th>Author</th>
+                            <th class="hide-mobile">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows injected by js/guide-loader.js -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="btn-secondary btn-small" style="clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);">Prev</button>
+                    <span class="page-num">Page 1 of 42</span>
+                    <button class="btn-secondary btn-small" style="clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="guide-sidebar">
+            <div class="glass-panel widget module-glass">
+                <h3><i class='bx bxs-hot'></i> Trending Guides</h3>
+                <div class="latest-activities">
+                    <!-- Trending Item 1 -->
+                    <div class="activity-item">
+                        <div class="activity-avatar" style="background-color: #a3ff12; color: #000;">1</div>
+                        <div class="activity-details">
+                            <a href="#" class="activity-title">Monster Hunter Wilds: Weapon Tier List</a>
+                            <div class="activity-foot">1.2M Views</div>
+                        </div>
+                    </div>
+                    <!-- Trending Item 2 -->
+                    <div class="activity-item">
+                        <div class="activity-avatar" style="background-color: #333; color: #fff;">2</div>
+                        <div class="activity-details">
+                            <a href="#" class="activity-title">GTA VI Map Secrets</a>
+                            <div class="activity-foot">950K Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel widget module-glass">
+                <h3><i class='bx bxs-medal'></i> Top Contributors</h3>
+                <ul class="contributor-list">
+                    <li>
+                        <div class="c-info">
+                            <span class="c-rank">#1</span>
+                            <span class="c-name">LoreMaster</span>
+                        </div>
+                        <span class="c-score text-glow">14,205 pts</span>
+                    </li>
+                    <li>
+                        <div class="c-info">
+                            <span class="c-rank">#2</span>
+                            <span class="c-name">RadiantSmurf</span>
+                        </div>
+                        <span class="c-score">9,410 pts</span>
+                    </li>
+                    <li>
+                        <div class="c-info">
+                            <span class="c-rank">#3</span>
+                            <span class="c-name">V_Merc</span>
+                        </div>
+                        <span class="c-score">8,203 pts</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal hidden">
+        <div class="auth-content glass-panel">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login">Login</button>
+                <button class="auth-tab" data-target="register">Register</button>
+            </div>
+            
+            <form id="form-login" class="auth-form active">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Login</button>
+            </form>
+            
+            <form id="form-register" class="auth-form hidden">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/guide-loader.js"></script>
+</body>
+</html>

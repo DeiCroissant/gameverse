@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEARS OF STEEL</title>
+    <meta name="description" content="Tears of Steel - Join the resistance in this high-octane sci-fi shooter.">
+    <meta property="og:title" content="TEARS OF STEEL">
+    <meta property="og:description" content="Tears of Steel - Join the resistance in this high-octane sci-fi shooter.">
+    <meta property="og:image" content="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">GAMEVERSE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Store</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="guide.html">Guide</a></li>
+        </ul>
+        <button class="btn-primary glow">Login</button>
+    </nav>
+
+    <!-- Cinematic Hero Section -->
+    <header class="detail-hero">
+        <div class="hero-video-container">
+            <video id="dyn-video" class="hero-video" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" autoplay loop muted playsinline></video>
+            <div id="dyn-carousel" class="hero-carousel" style="display: none;"></div>
+            <div class="hero-gradient-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Information Grid Section -->
+    <main class="container detail-main">
+        <div class="detail-hero-content reveal">
+            <h1 id="dyn-title" class="game-title">TEARS OF STEEL</h1>
+            <div class="game-reviews">
+                5.0 ★★★★★ <span class="review-count">(124 reviews)</span>
+            </div>
+            <div id="dyn-price" class="game-price">Free to Play</div>
+            <div class="detail-hero-actions">
+                <button class="btn-secondary glow-neon">Add to Cart</button>
+                <button class="btn-primary glow-neon big">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="detail-grid">
+            <!-- Left Column: Description -->
+            <div class="detail-description glass-panel reveal">
+                <h2>PRODUCT DESCRIPTION</h2>
+                <ul id="dyn-features" class="feature-list">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Stunning Cyberpunk Environments</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Intense PvP Mech Battles</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced Cybernetic Upgrades</li>
+                </ul>
+                <p id="dyn-desc">Join the resistance in this high-octane sci-fi shooter. Battle massive mech-snipers and cyborgs in a dystopian future to save humanity.</p>
+                <h3 style="margin-top: 30px; margin-bottom: 10px; font-size: 18px;">SYSTEM REQUIREMENTS</h3>
+                <ul id="dyn-sys-req" class="sys-req-list"></ul>
+            </div>
+
+            <!-- Right Column: Suggested Games -->
+            <aside class="detail-sidebar reveal">
+                <h2>SUGGESTED GAMES</h2>
+                <div class="suggested-games">
+                    <div class="suggested-card tilt-card" onclick="window.location.href='detail.html?id=elden-ring'">
+                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png" alt="Elden Ring">
+                        <div class="suggested-info">
+                            <h4>Elden Ring</h4>
+                            <span class="price">$59.99</span>
+                        </div>
+                    </div>
+                    <div class="suggested-card tilt-card" onclick="window.location.href='detail.html?id=god-of-war'">
+                        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png" alt="God of War">
+                        <div class="suggested-info">
+                            <h4>God of War Ragnarök</h4>
+                            <span class="price">$69.99</span>
+                        </div>
+                    </div>
+                     <div class="suggested-card tilt-card" onclick="window.location.href='detail.html?id=ghost-of-tsushima'">
+                        <img src="https://th.bing.com/th/id/R.2a61e945f3a7893ee5604706f1fc065e?rik=vOW3yC5g0Axmaw&pid=ImgRaw&r=0" alt="Ghost of Tsushima">
+                        <div class="suggested-info">
+                            <h4>Ghost of Tsushima</h4>
+                            <span class="price">$19.99</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/detail-loader.js"></script>
+</body>
+</html>

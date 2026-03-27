@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVerse - 3D Immersive Experience</title>
+    <meta name="description" content="Explore the GameVerse store - the ultimate immersive 3D gaming experience. Find trending and classic games.">
+    <meta property="og:title" content="GameVerse - 3D Immersive Experience">
+    <meta property="og:description" content="Explore the GameVerse store - the ultimate immersive 3D gaming experience. Find trending and classic games.">
+    <meta property="og:image" content="https://gameverse.com/og-image.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Three.js (Module) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">GAMEVERSE</a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Store</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="guide.html">Guide</a></li>
+        </ul>
+        <button id="nav-login-btn" class="btn-primary glow">Login</button>
+    </nav>
+
+    <!-- Hero Section with WebGL -->
+    <header class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="THE WITCHER 3">THE WITCHER 3</h1>
+            <p class="subtitle">Wild Hunt - Complete Edition</p>
+            <div class="hero-actions">
+                <button class="btn-primary glow big">Rent Now $9.99</button>
+                <button class="btn-secondary" onclick="window.location.href='detail.html?id=the-witcher-3'">Watch Trailer</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Grid Section -->
+    <main class="container">
+        <h2 class="section-title">Trending Games</h2>
+        <div class="game-grid" id="game-grid">
+            <!-- Cards will be injected here via JS or hardcoded for prototype -->
+            <!-- Populating strictly as per plan for prototype visual correctness -->
+            
+
+            <!-- Card 1: God of War Ragnarök -->
+            <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png" alt="God of War Ragnarök">
+                </div>
+                <div class="card-content">
+                    <h3>God of War Ragnarök</h3>
+                    <div class="card-meta">
+                        <span class="price">$69.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=god-of-war'">Rent</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Elden Ring -->
+            <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png" alt="Elden Ring">
+                </div>
+                <div class="card-content">
+                    <h3>Elden Ring</h3>
+                    <div class="card-meta">
+                        <span class="price">$59.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=elden-ring'">Rent</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Valorant -->
+            <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.DsPgUC3WT2WCqfqun0cYfAHaLH?w=720&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Valorant">
+                </div>
+                <div class="card-content">
+                    <h3>Valorant</h3>
+                    <div class="card-meta">
+                        <span class="price">Free</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=valorant'">Play</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: The Last of Us Part I -->
+            <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.1Q-7y6KRsf3YCQpvte-w0wHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="The Last of Us Part I">
+                </div>
+                <div class="card-content">
+                    <h3>The Last of Us Part I</h3>
+                    <div class="card-meta">
+                        <span class="price">$69.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=the-last-of-us'">Rent</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: FIFA 23 -->
+            <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://howdysports.com/wp-content/uploads/2022/10/fifa-23-cover-star-kylian-mbappe-psg-1-1.jpg" alt="FIFA 23">
+                </div>
+                <div class="card-content">
+                    <h3>FIFA 23</h3>
+                    <div class="card-meta">
+                        <span class="price">$29.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=fifa-23'">Rent</button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Card 6: Cyberpunk 2077 -->
+             <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.NSlU9gXGETC-UJGhdMRJUwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cyberpunk 2077">
+                </div>
+                <div class="card-content">
+                    <h3>Cyberpunk 2077</h3>
+                    <div class="card-meta">
+                        <span class="price">$29.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=cyberpunk-2077'">Rent</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 7: Horizon Forbidden West -->
+             <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://th.bing.com/th/id/R.b31ee53b2c3b892b239c2dbf419e4e62?rik=AsaO34K2RLrYJg&pid=ImgRaw&r=0" alt="Horizon Forbidden West">
+                </div>
+                <div class="card-content">
+                    <h3>Horizon Forbidden West</h3>
+                    <div class="card-meta">
+                        <span class="price">$39.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=horizon-forbidden-west'">Rent</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 8: Ghost of Tsushima -->
+             <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://th.bing.com/th/id/R.2a61e945f3a7893ee5604706f1fc065e?rik=vOW3yC5g0Axmaw&pid=ImgRaw&r=0" alt="Ghost of Tsushima">
+                </div>
+                <div class="card-content">
+                    <h3>Ghost of Tsushima</h3>
+                    <div class="card-meta">
+                        <span class="price">$19.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=ghost-of-tsushima'">Rent</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 9: Gran Turismo 7 -->
+             <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/02/gran-turismo-7-cover.jpg" alt="Gran Turismo 7">
+                </div>
+                <div class="card-content">
+                    <h3>Gran Turismo 7</h3>
+                    <div class="card-meta">
+                        <span class="price">$49.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=gran-turismo-7'">Rent</button>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 10: Spider-Man Miles Morales -->
+             <div class="game-card tilt-card">
+                <div class="card-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.F_fTl_13omBA8PwfUgFNqQHaKl?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Spider-Man Miles Morales">
+                </div>
+                <div class="card-content">
+                    <h3>Spider-Man Miles Morales</h3>
+                    <div class="card-meta">
+                        <span class="price">$29.99</span>
+                        <button class="btn-small" onclick="window.location.href='detail.html?id=spider-man'">Rent</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal hidden">
+        <div class="auth-content glass-panel">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login">Login</button>
+                <button class="auth-tab" data-target="register">Register</button>
+            </div>
+            
+            <form id="form-login" class="auth-form active">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Login</button>
+            </form>
+            
+            <form id="form-register" class="auth-form hidden">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/hero-scene.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum - GameVerse</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Glass Navigation (Matches index.html) -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">GAME<span style="color: #fff">VERSE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Store</a></li>
+            <li><a href="community.html" class="active">Community</a></li>
+            <li><a href="guide.html">Guide</a></li>
+        </ul>
+        <button id="nav-login-btn" class="btn-primary glow">Login</button>
+    </nav>
+
+    <!-- Sub-Navigation for Forum -->
+    <div class="forum-subnav">
+        <div class="container container-forum">
+            <ul class="subnav-links">
+                <li><a href="#" data-tab="tab-new">New posts</a></li>
+                <li><a href="#" class="active" data-tab="tab-trending">Trending</a></li>
+                <li><a href="#" data-tab="tab-bookmarks">Bookmarks</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="container forum-container">
+        
+        <!-- Left Column: Primary Forum Content -->
+        <div class="forum-content">
+            
+            <div id="tab-trending" class="forum-tab-content active">
+                
+            <!-- Category 1 -->
+            <div class="forum-category">
+                <div class="category-header js-toggle-category" data-target="cat-1">
+                    <h2>General Discussion</h2>
+                    <i class='bx bx-chevron-up toggle-icon'></i>
+                </div>
+                <div class="forum-rows" id="cat-1">
+                    <div class="forum-node">
+                        <div class="row-info">
+                            <i class='bx bx-message-square-detail forum-icon'></i>
+                            <div class="info-content">
+                                <a href="guide-thread.html?id=forum-maintenance" class="forum-title">GameVerse Announcements<span class="badge badge-new">New</span></a>
+                                <p class="forum-desc">Official news and updates regarding the platform.</p>
+                                <div class="sub-links">
+                                    <a href="#"><i class='bx bx-news'></i> Patch Notes</a>
+                                    <a href="#"><i class='bx bx-calendar-event'></i> Events</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-stats">
+                            <div><span class="stat-num">5.2K</span><span class="stat-label">Threads</span></div>
+                            <div><span class="stat-num">45.1K</span><span class="stat-label">Messages</span></div>
+                        </div>
+                        <div class="row-lastpost">
+                            <span class="post-title">Maintenance Schedule Q2</span>
+                            <span class="post-meta">Today at 10:00 AM &middot; ServerAdmin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="forum-category">
+                <div class="category-header js-toggle-category" data-target="cat-2">
+                    <h2>Platforms Central</h2>
+                    <i class='bx bx-chevron-up toggle-icon'></i>
+                </div>
+                <div class="forum-rows" id="cat-2">
+                    <div class="forum-node">
+                        <div class="row-info">
+                            <i class='bx bx-message-square-detail forum-icon'></i>
+                            <div class="info-content">
+                                <a href="guide-thread.html?id=rtx-5090" class="forum-title">PC Gaming</a>
+                                <p class="forum-desc">Hardware tips, game mods, and technical support.</p>
+                                <div class="sub-links">
+                                    <a href="#"><i class='bx bx-wrench'></i> Tech Support</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-stats">
+                            <div><span class="stat-num">25.1K</span><span class="stat-label">Threads</span></div>
+                            <div><span class="stat-num">13.3M</span><span class="stat-label">Messages</span></div>
+                        </div>
+                        <div class="row-lastpost">
+                            <span class="post-title">RTX 5090 Performance Limits</span>
+                            <span class="post-meta">A moment ago &middot; TechGuru99</span>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-node">
+                        <div class="row-info">
+                            <i class='bx bx-message-square-detail forum-icon'></i>
+                            <div class="info-content">
+                                <a href="guide-thread.html?id=ps5-rumors" class="forum-title">PlayStation<span class="badge badge-new">New</span></a>
+                                <p class="forum-desc">PS5 exclusives, VR setups, and trophy hunting.</p>
+                            </div>
+                        </div>
+                        <div class="row-stats">
+                            <div><span class="stat-num">12.4K</span><span class="stat-label">Threads</span></div>
+                            <div><span class="stat-num">4.2M</span><span class="stat-label">Messages</span></div>
+                        </div>
+                        <div class="row-lastpost">
+                            <span class="post-title">Spider-Man 3 Rumors</span>
+                            <span class="post-meta">11 minutes ago &middot; WebHead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="forum-category">
+                <div class="category-header js-toggle-category" data-target="cat-3">
+                    <h2>Community Hub</h2>
+                    <i class='bx bx-chevron-up toggle-icon'></i>
+                </div>
+                <div class="forum-rows" id="cat-3">
+                    <div class="forum-node">
+                        <div class="row-info">
+                            <i class='bx bx-message-square-detail forum-icon'></i>
+                            <div class="info-content">
+                                <a href="guide-thread.html?id=lfg-raid" class="forum-title">LFG (Looking For Group)</a>
+                                <p class="forum-desc">Find teammates for ranked climbing and multiplayer.</p>
+                                <div class="sub-links">
+                                    <a href="#"><i class='bx bx-group'></i> Competitive</a>
+                                    <a href="#"><i class='bx bx-coffee'></i> Casual</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-stats">
+                            <div><span class="stat-num">9.9K</span><span class="stat-label">Threads</span></div>
+                            <div><span class="stat-num">135.9K</span><span class="stat-label">Messages</span></div>
+                        </div>
+                        <div class="row-lastpost">
+                            <span class="post-title">Need 2 for Raid Tonight</span>
+                            <span class="post-meta">Today at 3:53 AM &middot; KaizerStar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div> <!-- Close tab-trending -->
+
+            <!-- TAB: New Posts -->
+            <div id="tab-new" class="forum-tab-content hidden">
+                <h3 class="category-header">GAMEVERSE NEWS</h3>
+                <div class="news-feed-list">
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-1" class="news-title">GameVerse 2.0 Update Preview: What to Expect</a>
+                            <div class="news-meta"><span>3 hours ago</span> | <span class="text-primary">Admin Team</span></div>
+                        </div>
+                    </article>
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-2" class="news-title">Top 10 RPGs to Look Forward to in 2026</a>
+                            <div class="news-meta"><span>5 hours ago</span> | <span class="text-primary">GameVerse Editorial</span></div>
+                        </div>
+                    </article>
+                </div>
+                
+                <h3 class="category-header">AROUND THE WEB</h3>
+                <div class="news-feed-list">
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1538481195655-21d4c2069e2a?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-3" class="news-title">Next-Gen Consoles: Specs and Rumors Roundup</a>
+                            <div class="news-meta"><span>1 day ago</span> | <span class="text-primary">TechRadar</span></div>
+                        </div>
+                    </article>
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-4" class="news-title">Esports Tournament Finals Reach Record Viewership</a>
+                            <div class="news-meta"><span>2 days ago</span> | <span class="text-primary">IGN</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- TAB: Bookmarks -->
+            <div id="tab-bookmarks" class="forum-tab-content hidden">
+                <div class="forum-category">
+                    <div class="category-header js-toggle-category" data-target="cat-bm-1">
+                        <h2>YOUR SAVED THREADS</h2>
+                        <i class='bx bx-chevron-up toggle-icon'></i>
+                    </div>
+                    <div class="forum-rows" id="cat-bm-1">
+                        <!-- Mock BM 1 -->
+                        <div class="forum-node">
+                            <div class="row-info">
+                                <i class='bx bx-bookmark-star forum-icon' style="color: #fbbf24;"></i>
+                                <div class="info-content">
+                                    <a href="guide-thread.html?id=build-netrunner" class="forum-title">Ultimate Netrunner Build</a>
+                                </div>
+                            </div>
+                            <div class="row-stats">
+                                <div><span class="stat-num">1.2K</span><span class="stat-label">Replies</span></div>
+                            </div>
+                            <div class="row-lastpost">
+                                <span class="post-title">Updated for patch 2.1</span>
+                                <span class="post-meta">Yesterday &middot; CyberPro</span>
+                            </div>
+                        </div>
+                        <!-- Mock BM 2 -->
+                        <div class="forum-node">
+                            <div class="row-info">
+                                <i class='bx bx-bookmark-star forum-icon' style="color: #fbbf24;"></i>
+                                <div class="info-content">
+                                    <a href="guide-thread.html?id=elden-ring-boss" class="forum-title">Elden Ring Boss Guide</a>
+                                </div>
+                            </div>
+                            <div class="row-stats">
+                                <div><span class="stat-num">4.5K</span><span class="stat-label">Replies</span></div>
+                            </div>
+                            <div class="row-lastpost">
+                                <span class="post-title">Malenia phase 2 dodge pattern</span>
+                                <span class="post-meta">2 days ago &middot; Tarnished</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="forum-sidebar">
+            <div class="glass-panel widget">
+                <h3><i class='bx bx-group'></i> Members online</h3>
+                <div class="online-list">
+                    TankerB1ll, beefnbeanz, Yertdra, farscape2stim, Abcsex69, voldy_0912,
+                    Quantanjuan, Miyavibz, Cannedbeer, SilasX, Moonrockq3, Qwerty2k18,
+                    HarmL, HulKnaves, jackbul34517, Lanzer, Sorra, M1Carabine, Shpar<span class="overflow-text">...and 20545 more.</span>
+                </div>
+                <div class="widget-footer">
+                    Total: 36,059 (members: 20,595, guests: 15,464)
+                </div>
+            </div>
+
+            <div class="glass-panel widget">
+                <h3><i class='bx bx-time'></i> Latest posts</h3>
+                <div class="latest-activities">
+                    <!-- Activity Item 1 -->
+                    <div class="activity-item">
+                        <div class="activity-avatar" style="background-color: #5ab1bb;">T</div>
+                        <div class="activity-details">
+                            <div class="activity-meta">
+                                <span class="tag tag-pc">PC</span>
+                                <a href="#" class="activity-title">RTX 5090 Performance Limits</a>
+                            </div>
+                            <div class="activity-foot">
+                                Platforms Central · A moment ago<br>
+                                TechGuru99
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activity Item 2 -->
+                    <div class="activity-item">
+                        <div class="activity-avatar" style="background-color: #e85d75;">W</div>
+                        <div class="activity-details">
+                            <div class="activity-meta">
+                                <span class="tag tag-ps">PS5</span>
+                                <a href="#" class="activity-title">Spider-Man 3 Rumors discussed here</a>
+                            </div>
+                            <div class="activity-foot">
+                                PlayStation · 11 minutes ago<br>
+                                WebHead
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activity Item 3 -->
+                    <div class="activity-item">
+                        <div class="activity-avatar" style="background-color: #9d8189;">K</div>
+                        <div class="activity-details">
+                            <div class="activity-meta">
+                                <span class="tag tag-xbox">Xbox</span>
+                                <a href="#" class="activity-title">Need 2 for Raid Tonight - Fast run</a>
+                            </div>
+                            <div class="activity-foot">
+                                LFG · Today at 3:53 AM<br>
+                                KaizerStar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal hidden">
+        <div class="auth-content glass-panel">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login">Login</button>
+                <button class="auth-tab" data-target="register">Register</button>
+            </div>
+            
+            <form id="form-login" class="auth-form active">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Login</button>
+            </form>
+            
+            <form id="form-register" class="auth-form hidden">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Interactions -->
+    <script type="module" src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.js-toggle-category');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const targetId = toggle.getAttribute('data-target');
+                    const targetRows = document.getElementById(targetId);
+                    const icon = toggle.querySelector('.toggle-icon');
+                    
+                    if (targetRows.classList.contains('hidden')) {
+                        targetRows.classList.remove('hidden');
+                        icon.classList.remove('bx-chevron-down');
+                        icon.classList.add('bx-chevron-up');
+                    } else {
+                        targetRows.classList.add('hidden');
+                        icon.classList.remove('bx-chevron-up');
+                        icon.classList.add('bx-chevron-down');
+                    }
+                });
+            });
+            // Tab Switching Logic
+            const tabLinks = document.querySelectorAll('.subnav-links a[data-tab]');
+            const tabContents = document.querySelectorAll('.forum-tab-content');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active from all tabs
+                    tabLinks.forEach(l => l.classList.remove('active'));
+                    tabContents.forEach(c => {
+                        c.classList.remove('active');
+                        c.classList.add('hidden');
+                    });
+                    
+                    // Make clicked active
+                    link.classList.add('active');
+                    const targetTab = document.getElementById(link.getAttribute('data-tab'));
+                    if (targetTab) {
+                        targetTab.classList.remove('hidden');
+                        targetTab.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

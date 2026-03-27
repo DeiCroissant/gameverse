@@ -45,12 +45,8 @@ export const gamesData = {
     'fifa-23': {
         title: "FIFA 23",
         price: "$29.99",
-        mediaType: "images",
-        images: [
-            "https://images.unsplash.com/photo-1518605368461-1ee7e5434444?q=80&w=2070",
-            "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2070",
-            "https://images.unsplash.com/photo-1553152531-18bca484cc2c?q=80&w=2070"
-        ],
+        mediaType: "video",
+        videoSrc: "assets/videos/ff23.mp4",
         description: "The World's Game brings the beautiful game to the pitch, with both men's and women's FIFA World Cup tournaments, and the most advanced gameplay ever.",
         features: ["HyperMotion2 Technology", "Women's Club Football", "Cross-Play Features"]
     },

@@ -17,14 +17,14 @@
 <body>
     <!-- Glass Navigation (Matches index.html) -->
     <nav class="glass-nav">
-        <div class="logo">GAME<span style="color: #fff">VERSE</span></div>
+        <a href="index.html" class="logo" style="text-decoration: none;">GAME<span style="color: #fff">VERSE</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Store</a></li>
             <li><a href="community.html" class="active">Community</a></li>
             <li><a href="guide.html">Guide</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="btn-secondary">Log In</button>
+            <button id="nav-login-btn" class="btn-secondary">Log In</button>
             <button class="btn-primary">Sign Up</button>
         </div>
     </nav>
@@ -59,7 +59,7 @@
                         <div class="row-info">
                             <i class='bx bx-message-square-detail forum-icon'></i>
                             <div class="info-content">
-                                <span class="forum-title">GameVerse Announcements<span class="badge badge-new">New</span></span>
+                                <a href="guide-thread.html?id=forum-maintenance" class="forum-title">GameVerse Announcements<span class="badge badge-new">New</span></a>
                                 <p class="forum-desc">Official news and updates regarding the platform.</p>
                                 <div class="sub-links">
                                     <a href="#"><i class='bx bx-news'></i> Patch Notes</a>
@@ -90,7 +90,7 @@
                         <div class="row-info">
                             <i class='bx bx-message-square-detail forum-icon'></i>
                             <div class="info-content">
-                                <span class="forum-title">PC Gaming</span>
+                                <a href="guide-thread.html?id=rtx-5090" class="forum-title">PC Gaming</a>
                                 <p class="forum-desc">Hardware tips, game mods, and technical support.</p>
                                 <div class="sub-links">
                                     <a href="#"><i class='bx bx-wrench'></i> Tech Support</a>
@@ -111,7 +111,7 @@
                         <div class="row-info">
                             <i class='bx bx-message-square-detail forum-icon'></i>
                             <div class="info-content">
-                                <span class="forum-title">PlayStation<span class="badge badge-new">New</span></span>
+                                <a href="guide-thread.html?id=ps5-rumors" class="forum-title">PlayStation<span class="badge badge-new">New</span></a>
                                 <p class="forum-desc">PS5 exclusives, VR setups, and trophy hunting.</p>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                         <div class="row-info">
                             <i class='bx bx-message-square-detail forum-icon'></i>
                             <div class="info-content">
-                                <span class="forum-title">LFG (Looking For Group)</span>
+                                <a href="guide-thread.html?id=lfg-raid" class="forum-title">LFG (Looking For Group)</a>
                                 <p class="forum-desc">Find teammates for ranked climbing and multiplayer.</p>
                                 <div class="sub-links">
                                     <a href="#"><i class='bx bx-group'></i> Competitive</a>
@@ -161,61 +161,40 @@
 
             <!-- TAB: New Posts -->
             <div id="tab-new" class="forum-tab-content hidden">
-                <div class="forum-category">
-                    <div class="category-header js-toggle-category" data-target="cat-new-1">
-                        <h2>RECENTLY CREATED THREADS</h2>
-                        <i class='bx bx-chevron-up toggle-icon'></i>
-                    </div>
-                    <div class="forum-rows" id="cat-new-1">
-                        <!-- Mock New Post 1 -->
-                        <div class="forum-node">
-                            <div class="row-info">
-                                <i class='bx bx-message-square-detail forum-icon'></i>
-                                <div class="info-content">
-                                    <span class="forum-title">GTA VI trailer thoughts?</span>
-                                </div>
-                            </div>
-                            <div class="row-stats">
-                                <div><span class="stat-num">12</span><span class="stat-label">Replies</span></div>
-                            </div>
-                            <div class="row-lastpost">
-                                <span class="post-title">I think it looks amazing but...</span>
-                                <span class="post-meta">Just now &middot; user1</span>
-                            </div>
+                <h3 class="category-header">GAMEVERSE NEWS</h3>
+                <div class="news-feed-list">
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-1" class="news-title">GameVerse 2.0 Update Preview: What to Expect</a>
+                            <div class="news-meta"><span>3 hours ago</span> | <span class="text-primary">Admin Team</span></div>
                         </div>
-                        <!-- Mock New Post 2 -->
-                        <div class="forum-node">
-                            <div class="row-info">
-                                <i class='bx bx-message-square-detail forum-icon'></i>
-                                <div class="info-content">
-                                    <span class="forum-title">Anyone having issues with Steam?</span>
-                                </div>
-                            </div>
-                            <div class="row-stats">
-                                <div><span class="stat-num">5</span><span class="stat-label">Replies</span></div>
-                            </div>
-                            <div class="row-lastpost">
-                                <span class="post-title">Same here, connection dropped</span>
-                                <span class="post-meta">2 mins ago &middot; user2</span>
-                            </div>
+                    </article>
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-2" class="news-title">Top 10 RPGs to Look Forward to in 2026</a>
+                            <div class="news-meta"><span>5 hours ago</span> | <span class="text-primary">GameVerse Editorial</span></div>
                         </div>
-                        <!-- Mock New Post 3 -->
-                        <div class="forum-node">
-                            <div class="row-info">
-                                <i class='bx bx-message-square-detail forum-icon'></i>
-                                <div class="info-content">
-                                    <span class="forum-title">First impressions on Helldivers 2 update</span>
-                                </div>
-                            </div>
-                            <div class="row-stats">
-                                <div><span class="stat-num">34</span><span class="stat-label">Replies</span></div>
-                            </div>
-                            <div class="row-lastpost">
-                                <span class="post-title">Mechs are finally usable</span>
-                                <span class="post-meta">10 mins ago &middot; user3</span>
-                            </div>
+                    </article>
+                </div>
+                
+                <h3 class="category-header">AROUND THE WEB</h3>
+                <div class="news-feed-list">
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1538481195655-21d4c2069e2a?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-3" class="news-title">Next-Gen Consoles: Specs and Rumors Roundup</a>
+                            <div class="news-meta"><span>1 day ago</span> | <span class="text-primary">TechRadar</span></div>
                         </div>
-                    </div>
+                    </article>
+                    <article class="news-feed-item glass-panel">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070" alt="thumb" class="news-thumb">
+                        <div class="news-content">
+                            <a href="guide-thread.html?id=news-4" class="news-title">Esports Tournament Finals Reach Record Viewership</a>
+                            <div class="news-meta"><span>2 days ago</span> | <span class="text-primary">IGN</span></div>
+                        </div>
+                    </article>
                 </div>
             </div>
 
@@ -232,7 +211,7 @@
                             <div class="row-info">
                                 <i class='bx bx-bookmark-star forum-icon' style="color: #fbbf24;"></i>
                                 <div class="info-content">
-                                    <span class="forum-title">Ultimate Netrunner Build</span>
+                                    <a href="guide-thread.html?id=build-netrunner" class="forum-title">Ultimate Netrunner Build</a>
                                 </div>
                             </div>
                             <div class="row-stats">
@@ -248,7 +227,7 @@
                             <div class="row-info">
                                 <i class='bx bx-bookmark-star forum-icon' style="color: #fbbf24;"></i>
                                 <div class="info-content">
-                                    <span class="forum-title">Elden Ring Boss Guide</span>
+                                    <a href="guide-thread.html?id=elden-ring-boss" class="forum-title">Elden Ring Boss Guide</a>
                                 </div>
                             </div>
                             <div class="row-stats">
@@ -330,7 +309,32 @@
 
     </main>
 
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal hidden">
+        <div class="auth-content glass-panel">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login">Login</button>
+                <button class="auth-tab" data-target="register">Register</button>
+            </div>
+            
+            <form id="form-login" class="auth-form active">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Login</button>
+            </form>
+            
+            <form id="form-register" class="auth-form hidden">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Interactions -->
+    <script type="module" src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggles = document.querySelectorAll('.js-toggle-category');

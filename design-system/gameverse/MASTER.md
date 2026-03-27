@@ -7,8 +7,8 @@
 ---
 
 **Project:** GameVerse
-**Generated:** 2026-03-23 21:35:29
-**Category:** Gaming
+**Generated:** 2026-03-27 02:39:39
+**Category:** Financial Dashboard
 
 ---
 
@@ -18,24 +18,24 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#7C3AED` | `--color-primary` |
-| Secondary | `#A78BFA` | `--color-secondary` |
-| CTA/Accent | `#F43F5E` | `--color-cta` |
-| Background | `#0F0F23` | `--color-background` |
-| Text | `#E2E8F0` | `--color-text` |
+| Primary | `#3B82F6` | `--color-primary` |
+| Secondary | `#60A5FA` | `--color-secondary` |
+| CTA/Accent | `#F97316` | `--color-cta` |
+| Background | `#F8FAFC` | `--color-background` |
+| Text | `#1E293B` | `--color-text` |
 
-**Color Notes:** Vibrant + neon + immersive colors
+**Color Notes:** Cool→Hot gradients + neutral grey
 
 ### Typography
 
-- **Heading Font:** Russo One
-- **Body Font:** Chakra Petch
-- **Mood:** gaming, bold, action, esports, competitive, energetic
-- **Google Fonts:** [Russo One + Chakra Petch](https://fonts.google.com/share?selection.family=Chakra+Petch:wght@300;400;500;600;700|Russo+One)
+- **Heading Font:** Fira Code
+- **Body Font:** Fira Sans
+- **Mood:** dashboard, data, analytics, code, technical, precise
+- **Google Fonts:** [Fira Code + Fira Sans](https://fonts.google.com/share?selection.family=Fira+Code:wght@400;500;600;700|Fira+Sans:wght@300;400;500;600;700)
 
 **CSS Import:**
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
 ```
 
 ### Spacing Variables
@@ -68,7 +68,7 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #F43F5E;
+  background: #F97316;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -85,8 +85,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #7C3AED;
-  border: 2px solid #7C3AED;
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -99,7 +99,7 @@
 
 ```css
 .card {
-  background: #0F0F23;
+  background: #F8FAFC;
   border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow-md);
@@ -125,9 +125,9 @@
 }
 
 .input:focus {
-  border-color: #7C3AED;
+  border-color: #3B82F6;
   outline: none;
-  box-shadow: 0 0 0 3px #7C3AED20;
+  box-shadow: 0 0 0 3px #3B82F620;
 }
 ```
 
@@ -153,28 +153,28 @@
 
 ## Style Guidelines
 
-**Style:** 3D & Hyperrealism
+**Style:** Dark Mode (OLED)
 
-**Keywords:** Depth, realistic textures, 3D models, spatial navigation, tactile, skeuomorphic elements, rich detail, immersive
+**Keywords:** Dark theme, low light, high contrast, deep black, midnight blue, eye-friendly, OLED, night mode, power efficient
 
-**Best For:** Gaming, product showcase, immersive experiences, high-end e-commerce, architectural viz, VR/AR
+**Best For:** Night-mode apps, coding platforms, entertainment, eye-strain prevention, OLED devices, low-light
 
-**Key Effects:** WebGL/Three.js 3D, realistic shadows (layers), physics lighting, parallax (3-5 layers), smooth 3D (300-400ms)
+**Key Effects:** Minimal glow (text-shadow: 0 0 10px), dark-to-light transitions, low white emission, high readability, visible focus
 
 ### Page Pattern
 
-**Pattern Name:** FAQ/Documentation Landing
+**Pattern Name:** Comparison Table + CTA
 
-- **Conversion Strategy:** Reduce support tickets. Track search analytics. Show related articles. Contact escalation path.
-- **CTA Placement:** Search bar prominent + Contact CTA for unresolved questions
-- **Section Order:** 1. Hero with search bar, 2. Popular categories, 3. FAQ accordion, 4. Contact/support CTA
+- **Conversion Strategy:** Use comparison to show unique value. Highlight your product row. Include 'free trial' in pricing row.
+- **CTA Placement:** Table: Right column. CTA: Below table
+- **Section Order:** 1. Hero, 2. Problem intro, 3. Comparison table (product vs competitors), 4. Pricing (optional), 5. CTA
 
 ---
 
 ## Anti-Patterns (Do NOT Use)
 
-- ❌ Minimalist design
-- ❌ Static assets
+- ❌ Light mode default
+- ❌ Slow rendering
 
 ### Additional Forbidden Patterns
 

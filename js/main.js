@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initTiltEffect();
     initScrollReveal();
+    initAuthModal();
 });
 
 function initTiltEffect() {
@@ -76,4 +77,122 @@ function initScrollReveal() {
     reveals.forEach(reveal => {
         observer.observe(reveal);
     });
+}
+
+function initAuthModal() {
+    const modal = document.getElementById('auth-modal');
+    if (!modal) {
+        updateNavUI(); // Just attempt to run UI updates on non-index pages
+        return; 
+    }
+
+    const loginBtn = document.getElementById('nav-login-btn');
+    const closeModalBtn = document.getElementById('close-modal');
+    const authTabs = document.querySelectorAll('.auth-tab');
+    const formLogin = document.getElementById('form-login');
+    const formRegister = document.getElementById('form-register');
+
+    if (loginBtn) {
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+        });
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+
+    authTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            authTabs.forEach(t => t.classList.remove('active'));
+            formLogin.classList.add('hidden');
+            formRegister.classList.add('hidden');
+
+            tab.classList.add('active');
+            if (tab.getAttribute('data-target') === 'login') {
+                formLogin.classList.remove('hidden');
+            } else {
+                formRegister.classList.remove('hidden');
+            }
+        });
+    });
+
+    const handleAuth = (e, usernameInputId) => {
+        e.preventDefault();
+        const username = document.getElementById(usernameInputId).value;
+        if (username) {
+            localStorage.setItem('gameverse_user', username);
+            modal.classList.add('hidden');
+            updateNavUI();
+        }
+    };
+
+    formLogin.addEventListener('submit', (e) => handleAuth(e, 'login-username'));
+    formRegister.addEventListener('submit', (e) => handleAuth(e, 'reg-username'));
+
+    updateNavUI();
+}
+
+function updateNavUI() {
+    const user = localStorage.getItem('gameverse_user');
+    if (user) {
+        const transformButton = (btn) => {
+            if (btn.hasAttribute('data-transformed')) return;
+            
+            const container = document.createElement('div');
+            container.style.display = 'flex';
+            container.style.alignItems = 'center';
+            container.style.gap = '15px';
+            
+            const userGreeting = document.createElement('span');
+            userGreeting.textContent = `Hi, ${user}`;
+            userGreeting.style.color = 'var(--text-primary)';
+            userGreeting.style.fontWeight = 'bold';
+            
+            const adminLink = document.createElement('button');
+            adminLink.className = 'btn-small glow-neon';
+            adminLink.textContent = 'Admin Panel';
+            adminLink.onclick = () => window.location.href = 'admin.html';
+            
+            const logOutBtn = document.createElement('button');
+            logOutBtn.className = 'btn-small';
+            logOutBtn.style.borderColor = '#EF4444';
+            logOutBtn.style.color = '#EF4444';
+            logOutBtn.textContent = 'Logout';
+            logOutBtn.onclick = () => {
+                localStorage.removeItem('gameverse_user');
+                window.location.reload();
+            };
+            
+            container.appendChild(userGreeting);
+            container.appendChild(adminLink);
+            container.appendChild(logOutBtn);
+            
+            btn.parentNode.replaceChild(container, btn);
+            container.setAttribute('data-transformed', 'true');
+        };
+
+        // Find login button based on multiple pages variants
+        const loginBtnIndex = document.getElementById('nav-login-btn');
+        if (loginBtnIndex) {
+            transformButton(loginBtnIndex);
+        } else {
+            // Check elements with text content "Login" or "Log In"
+            const allBtns = document.querySelectorAll('nav button');
+            allBtns.forEach(btn => {
+                if (btn.textContent.includes('Login') || btn.textContent.includes('Log In')) {
+                    transformButton(btn);
+                }
+            });
+        }
+    }
 }

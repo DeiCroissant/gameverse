@@ -486,3 +486,188 @@ h1, h2, h3, h4, .stat-value, .revenue-number {
 .admin-view.hidden {
   display: none;
 }
+
+.action-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-icon-btn {
+  background: transparent;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Specific Action Hover States */
+.action-icon-btn.view:hover {
+  color: var(--neon-green);
+  background: rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+.action-icon-btn.edit:hover {
+  color: #3B82F6;
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.action-icon-btn.delete:hover {
+  color: #EF4444;
+  background: rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+.admin-form-group {
+    margin-bottom: 20px;
+}
+.admin-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #94A3B8;
+    font-size: 13px;
+    font-family: 'Fira Code', monospace;
+}
+.admin-form-input {
+    width: 100%;
+    padding: 10px;
+    background: #121212;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    color: #F8FAFC;
+    font-family: inherit;
+    outline: none;
+}
+.admin-form-input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+.admin-btn {
+    padding: 10px 20px;
+    background: rgba(57, 255, 20, 0.1);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.admin-btn:hover {
+    background: rgba(57, 255, 20, 0.2);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.status-negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ========================================= */
+/* ADMIN MOBILE RESPONSIVE DESIGN            */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        top: auto;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+        flex-direction: row;
+        border-right: none;
+        border-top: 1px solid var(--admin-border);
+        z-index: 1000;
+        padding: 0;
+    }
+    
+    .admin-logo, .admin-profile {
+        display: none;
+    }
+    
+    .admin-nav {
+        padding: 0;
+        width: 100%;
+    }
+    
+    .admin-nav ul {
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .admin-nav li {
+        flex: 1;
+    }
+    
+    .admin-nav li a {
+        flex-direction: column;
+        padding: 8px 0;
+        gap: 4px;
+        font-size: 10px;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+    }
+    
+    .admin-nav li a.active {
+        border-bottom: 3px solid #3B82F6;
+        background: transparent;
+    }
+    
+    .admin-nav li a svg {
+        margin: 0;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        margin-bottom: 60px; /* Make space for bottom nav */
+    }
+    
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-data-split {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Allow tables to swipe horizontally */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .admin-content-inner {
+        padding: 15px;
+    }
+    
+    .admin-topbar {
+        padding: 0 15px;
+    }
+    
+    .admin-search {
+        width: 150px; /* shrink search bar on mobile */
+    }
+}

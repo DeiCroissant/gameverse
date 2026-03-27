@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTiltEffect();
     initScrollReveal();
     initAuthModal();
+    initMobileNav();
 });
 
 function initTiltEffect() {
@@ -20,6 +21,7 @@ function initTiltEffect() {
 }
 
 function handleMouseMove(e) {
+    if (window.innerWidth <= 768) return;
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     
@@ -195,4 +197,24 @@ function updateNavUI() {
             });
         }
     }
+}
+
+function initMobileNav() {
+    const nav = document.querySelector('.glass-nav');
+    if (!nav) return;
+    
+    const hamburger = document.createElement('button');
+    hamburger.className = 'hamburger';
+    hamburger.innerHTML = '&#9776;';
+    hamburger.setAttribute('aria-label', 'Toggle Navigation');
+    
+    nav.appendChild(hamburger);
+
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+        if(navLinks) {
+            navLinks.classList.toggle('active');
+        }
+    });
 }

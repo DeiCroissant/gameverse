@@ -591,9 +591,134 @@ h1, h2, h3 {
     transition: opacity 1s ease-in-out;
 }
 
-.carousel-slide.active {
-    opacity: 1;
-    z-index: 1;
+/* ========================================= */
+/* MOBILE RESPONSIVE DESIGN                  */
+/* ========================================= */
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    /* Touch Targets */
+    button, a, input, select {
+        min-height: 44px;
+    }
+
+    /* Navbar */
+    .glass-nav {
+        padding: 0 20px;
+        position: fixed;
+    }
+    
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: rgba(15, 16, 20, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    #nav-login-btn {
+        margin-right: 40px; /* Make room for absolute hamburger */
+    }
+
+    /* Typography & Padding */
+    .hero-content h1, .game-title, .guide-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    .subtitle, .guide-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Grids & Flexbox - Single Column */
+    .game-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .forum-container, .detail-grid, .guide-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .detail-grid {
+        gap: 20px;
+    }
+
+    /* Disable tilt transform by overriding */
+    .tilt-card {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Hero Actions */
+    .hero-actions, .detail-hero-actions {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .hero-actions button, .detail-hero-actions button {
+        width: 100%;
+    }
+
+    /* Sub-navs and Forums */
+    .subnav-links {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+
+    .row-stats, .row-lastpost {
+        display: none !important; /* Save space on mobile forum */
+    }
+    
+    .row-info {
+        width: 100%;
+    }
 }
 
 /* ========================================= */

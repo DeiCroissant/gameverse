@@ -12,7 +12,7 @@ export const gamesData = {
         title: "ELDEN RING",
         price: "$59.99",
         mediaType: "video",
-        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796854/elden-ring_wcioyu.mp4",
+        videoSrc: "assets/videos/elden-ring.mp4",
         description: "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
         features: ["Vast Seamless Open World", "Deep Tactical Combat", "Rich Lore Crafted by George R.R. Martin"],
         systemRequirements: { os: "Windows 10", processor: "INTEL CORE I5-8400 or AMD RYZEN 3 3300X", memory: "12 GB RAM", graphics: "NVIDIA GEFORCE GTX 1060 3 GB", storage: "60 GB available space" }

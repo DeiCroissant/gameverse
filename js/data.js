@@ -12,7 +12,7 @@ export const gamesData = {
         title: "ELDEN RING",
         price: "$59.99",
         mediaType: "video",
-        videoSrc: "assets/videos/elden-ring.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796854/elden-ring_wcioyu.mp4",
         description: "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
         features: ["Vast Seamless Open World", "Deep Tactical Combat", "Rich Lore Crafted by George R.R. Martin"],
         systemRequirements: { os: "Windows 10", processor: "INTEL CORE I5-8400 or AMD RYZEN 3 3300X", memory: "12 GB RAM", graphics: "NVIDIA GEFORCE GTX 1060 3 GB", storage: "60 GB available space" }
@@ -21,7 +21,7 @@ export const gamesData = {
         title: "GOD OF WAR RAGNARÖK",
         price: "$69.99",
         mediaType: "video",
-        videoSrc: "assets/videos/god-of-war.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796839/god-of-war_uwmuzd.mp4",
         description: "Join Kratos and Atreus on a mythic journey for answers before Ragnarök arrives. Journey through dangerous and stunning landscapes.",
         features: ["Visceral Physical Combat", "Emotional Father-Son Story", "Explore the Nine Realms"],
         systemRequirements: { os: "Windows 10 64-bit", processor: "Intel i5-2500K or AMD Ryzen 3 1200", memory: "8 GB RAM", graphics: "NVIDIA GTX 960 or AMD R9 290X", storage: "70 GB available space" }
@@ -30,7 +30,7 @@ export const gamesData = {
         title: "VALORANT",
         price: "Free to Play",
         mediaType: "video",
-        videoSrc: "assets/videos/valorant.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796843/valorant_avxrep.mp4",
         description: "Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and defend your side using sharp gunplay and tactical abilities.",
         features: ["5v5 Tactical Shooter", "Unique Character Abilities", "Global Competitive Matchmaking", "Cross-Play"]
     },
@@ -38,7 +38,7 @@ export const gamesData = {
         title: "THE LAST OF US PART I",
         price: "$69.99",
         mediaType: "video",
-        videoSrc: "assets/videos/thelastofus.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796845/thelastofus_dnrjkj.mp4",
         description: "Experience the emotional storytelling and unforgettable characters in Joel and Ellie's harrowing journey across a post-pandemic United States.",
         features: ["Award-Winning Story", "Intense Stealth/Action", "Completely Rebuilt for Next-Gen"]
     },
@@ -46,7 +46,7 @@ export const gamesData = {
         title: "FIFA 23",
         price: "$29.99",
         mediaType: "video",
-        videoSrc: "assets/videos/ff23.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796851/ff23_nv9csw.mp4",
         description: "The World's Game brings the beautiful game to the pitch, with both men's and women's FIFA World Cup tournaments, and the most advanced gameplay ever.",
         features: ["HyperMotion2 Technology", "Women's Club Football", "Cross-Play Features"]
     },
@@ -54,7 +54,7 @@ export const gamesData = {
         title: "CYBERPUNK 2077",
         price: "$29.99",
         mediaType: "video",
-        videoSrc: "assets/videos/cyberpunk.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796840/cyberpunk_axkdfg.mp4",
         description: "An open-world, action-adventure RPG set in the dark future of Night City — a megalopolis obsessed with power, glamour, and body modification.",
         features: ["Vast Sci-Fi Open World", "Deep Character Customization", "Branching Narrative Paths"]
     },
@@ -62,7 +62,7 @@ export const gamesData = {
         title: "HORIZON FORBIDDEN WEST",
         price: "$39.99",
         mediaType: "video",
-        videoSrc: "assets/videos/horizon.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796847/horizon_gmks0r.mp4",
         description: "Join Aloy as she braves the Forbidden West—a majestic but dangerous frontier that conceals mysterious new threats.",
         features: ["Stunning Post-Apocalyptic Landscape", "Tactical Machine Combat", "Underwater Exploration"]
     },
@@ -70,7 +70,7 @@ export const gamesData = {
         title: "GHOST OF TSUSHIMA",
         price: "$19.99",
         mediaType: "video",
-        videoSrc: "assets/videos/ghost-of.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796845/ghost-of_zalobb.mp4",
         description: "Forge a new path and wage an unconventional war for the freedom of Tsushima in this critically acclaimed open-world action-adventure.",
         features: ["Masterful Katana Combat", "Breathtaking Open World", "Rich Historical Setting"]
     },
@@ -78,7 +78,7 @@ export const gamesData = {
         title: "GRAN TURISMO 7",
         price: "$49.99",
         mediaType: "video",
-        videoSrc: "assets/videos/gran.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796844/gran_zvvx3n.mp4",
         description: "From classic vehicles and bleeding-edge concept cars to real-life tracks, experience the ultimate driving simulator with unmatched realism.",
         features: ["400+ Highly Detailed Cars", "Realistic Handling Physics", "Extensive Customization"]
     },
@@ -86,7 +86,7 @@ export const gamesData = {
         title: "SPIDER-MAN: MILES MORALES",
         price: "$29.99",
         mediaType: "video",
-        videoSrc: "assets/videos/marvel.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796847/marvel_zouctv.mp4",
         description: "Rise up as Miles Morales seamlessly webslings through Marvel's New York, mastering explosive new powers to become his own Spider-Man.",
         features: ["Bio-Electric Venom Attacks", "Stunning Snowy New York", "Fluid Web-Swinging Mechanics"]
     },
@@ -94,7 +94,7 @@ export const gamesData = {
         title: "THE WITCHER 3",
         price: "$9.99",
         mediaType: "video",
-        videoSrc: "assets/videos/wither3.mp4",
+        videoSrc: "https://res.cloudinary.com/dipo4aj7a/video/upload/v1774796858/wither3_obikmg.mp4",
         description: "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will.",
         features: ["Massive Open World", "Deep Role-Playing", "Dynamic Weather System"]
     }

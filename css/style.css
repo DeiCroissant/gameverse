@@ -652,6 +652,35 @@ h1, h2, h3 {
         margin-right: 40px; /* Make room for absolute hamburger */
     }
 
+    .nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px !important;
+        margin-right: 40px;
+    }
+
+    .nav-right .user-greeting {
+        display: none !important;
+    }
+
+    .nav-right .btn-small {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        min-height: auto !important;
+    }
+
+    .hero-section {
+        height: 60vh !important;
+        min-height: 400px !important;
+    }
+    
+    .detail-hero {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 0 !important;
+        aspect-ratio: 16 / 9;
+    }
+
     /* Typography & Padding */
     .hero-content h1, .game-title, .guide-title {
         font-size: 2.5rem !important;

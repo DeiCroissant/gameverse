@@ -151,11 +151,13 @@ function updateNavUI() {
             if (btn.hasAttribute('data-transformed')) return;
             
             const container = document.createElement('div');
+            container.className = 'nav-right';
             container.style.display = 'flex';
             container.style.alignItems = 'center';
             container.style.gap = '15px';
             
             const userGreeting = document.createElement('span');
+            userGreeting.className = 'user-greeting';
             userGreeting.textContent = `Hi, ${user}`;
             userGreeting.style.color = 'var(--text-primary)';
             userGreeting.style.fontWeight = 'bold';

@@ -135,6 +135,9 @@ function initAuthModal() {
             localStorage.setItem('gameverse_user', username);
             modal.classList.add('hidden');
             updateNavUI();
+            if (window.location.pathname.includes('user.html')) {
+                window.location.reload();
+            }
         }
     };
 
@@ -156,16 +159,26 @@ function updateNavUI() {
             container.style.alignItems = 'center';
             container.style.gap = '15px';
             
-            const userGreeting = document.createElement('span');
+            const userGreeting = document.createElement('a');
             userGreeting.className = 'user-greeting';
             userGreeting.textContent = `Hi, ${user}`;
-            userGreeting.style.color = 'var(--text-primary)';
+            userGreeting.href = 'user.html';
+            userGreeting.style.color = 'var(--primary)';
+            userGreeting.style.textDecoration = 'underline';
+            userGreeting.style.cursor = 'pointer';
             userGreeting.style.fontWeight = 'bold';
             
             const adminLink = document.createElement('button');
             adminLink.className = 'btn-small glow-neon';
             adminLink.textContent = 'Admin Panel';
             adminLink.onclick = () => window.location.href = 'admin.html';
+
+            const cartLink = document.createElement('button');
+            cartLink.className = 'btn-small glow-neon';
+            cartLink.style.borderColor = '#1ED760';
+            cartLink.style.color = '#1ED760';
+            cartLink.textContent = 'My Cart';
+            cartLink.onclick = () => window.location.href = 'user.html';
             
             const logOutBtn = document.createElement('button');
             logOutBtn.className = 'btn-small';
@@ -178,7 +191,10 @@ function updateNavUI() {
             };
             
             container.appendChild(userGreeting);
-            container.appendChild(adminLink);
+            if (user.toLowerCase() === 'admin' || user.toLowerCase() === 'administrator') {
+                container.appendChild(adminLink);
+            }
+            container.appendChild(cartLink);
             container.appendChild(logOutBtn);
             
             btn.parentNode.replaceChild(container, btn);
@@ -220,3 +236,31 @@ function initMobileNav() {
         }
     });
 }
+
+// Global Toast function for GameVerse aesthetic overrides
+window.showToast = function(message, type = 'success') {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = `toast ${type === 'error' ? 'toast-error' : ''}`;
+    
+    // Add BoxIcons if available, or just text fallback for icon
+    const icon = type === 'error' ? '✖' : '✔';
+    toast.innerHTML = `<span style="font-size: 1.2em; filter: drop-shadow(0 0 5px currentColor);">${icon}</span> <span>${message}</span>`;
+    
+    container.appendChild(toast);
+    
+    // Trigger reflow
+    toast.offsetHeight; 
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400); // 400ms matches css transition
+    }, 3000);
+};
+

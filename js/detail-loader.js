@@ -105,4 +105,54 @@ function initDynamicDetails() {
     
     const ogImage = document.querySelector('meta[property="og:image"]');
     if (ogImage) ogImage.setAttribute("content", game.videoSrc);
+
+    // Cart Logic
+    const addToCartBtn = document.getElementById('add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            const user = localStorage.getItem('gameverse_user');
+            if (!user) {
+                if (window.showToast) window.showToast('Please login first!', 'error');
+                const modal = document.getElementById('auth-modal');
+                if (modal) modal.classList.remove('hidden');
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('gameverse_cart') || '[]');
+            // Use 'id' from URL, but if null use the fallback id
+            const itemId = id || 'tears-of-steel';
+            if (!cart.includes(itemId)) {
+                cart.push(itemId);
+                localStorage.setItem('gameverse_cart', JSON.stringify(cart));
+                if (window.showToast) {
+                    window.showToast('Added to cart!', 'success');
+                }
+            } else {
+                if (window.showToast) {
+                    window.showToast('Item already in cart!', 'error');
+                }
+            }
+        });
+    }
+
+    const buyNowBtn = document.getElementById('buy-now-btn');
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', () => {
+            const user = localStorage.getItem('gameverse_user');
+            if (!user) {
+                if (window.showToast) window.showToast('Please login first to checkout!', 'error');
+                const modal = document.getElementById('auth-modal');
+                if (modal) modal.classList.remove('hidden');
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('gameverse_cart') || '[]');
+            const itemId = id || 'tears-of-steel';
+            if (!cart.includes(itemId)) {
+                cart.push(itemId);
+                localStorage.setItem('gameverse_cart', JSON.stringify(cart));
+            }
+            window.location.href = 'user.html';
+        });
+    }
 }

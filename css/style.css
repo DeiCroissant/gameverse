@@ -1694,3 +1694,47 @@ a.forum-title:hover {
 .w-100 {
     width: 100%;
 }
+
+/* ========================================= */
+/* TOAST NOTIFICATION STYLES                 */
+/* ========================================= */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--surface-glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--primary); /* default to success/primary */
+    box-shadow: 0 0 15px rgba(163, 255, 18, 0.4);
+    color: var(--text-primary);
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+    pointer-events: auto;
+}
+
+.toast.toast-error {
+    border-color: #EF4444; /* Red for errors */
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}

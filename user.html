@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - GameVerse</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .user-container { margin-top: calc(var(--nav-height) + 20px); gap: 40px; display: grid; grid-template-columns: 1fr 2fr; }
+        @media(max-width: 900px) { .user-container { grid-template-columns: 1fr; } }
+        
+        .profile-card { text-align: center; height: fit-content; padding: 40px; }
+        .avatar { width: 140px; height: 140px; border-radius: 50%; background: var(--primary); color: #000; font-size: 70px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: var(--font-heading); font-weight: bold; }
+        
+        .wallet-box { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; margin-top: 20px; display: flex; flex-direction: column; gap: 5px; }
+        .wallet-box h3 { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; font-weight: 500; font-family: var(--font-body); margin: 0; }
+        .wallet-box .price { font-size: 24px; color: var(--primary); font-family: var(--font-heading); text-shadow: var(--glow); margin-bottom: 10px; }
+        
+        .xp-box { margin-top: 20px; text-align: left; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; }
+        .xp-header { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; font-weight: bold; }
+        .xp-bar-bg { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+        .xp-bar-fill { width: 85%; height: 100%; background: var(--primary); box-shadow: 0 0 10px rgba(163, 255, 18, 0.6); border-radius: 4px; transition: width 1s ease-out; }
+        
+        .social-box { margin-top: 20px; margin-bottom: 25px; text-align: left; }
+        .social-box h3 { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 10px; }
+        .social-icons { display: flex; gap: 15px; justify-content: center; }
+        .social-icons i { font-size: 30px; color: rgba(255,255,255,0.5); cursor: pointer; transition: color 0.3s, transform 0.3s; }
+        .social-icons i:hover { color: var(--primary); transform: translateY(-3px); }
+        
+        .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .cart-item:last-child { border-bottom: none; }
+        .cart-item-img { width: 140px; height: 100px; object-fit: cover; border-radius: 8px; margin-right: 25px; border: 1px solid rgba(255,255,255,0.1); }
+        .cart-info { flex: 1; display: flex; flex-direction: column; }
+        .cart-title { font-size: 22px; font-family: var(--font-heading); color: #fff; margin-bottom: 5px; }
+        .cart-price { color: var(--primary); font-size: 18px; font-weight: bold; margin-top: 8px; }
+        
+        .cart-actions { display: flex; align-items: center; gap: 15px; }
+        .btn-remove { background: transparent; border: 1px solid #EF4444; color: #EF4444; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; font-size: 14px;}
+        .btn-remove:hover { background: #EF4444; color: #fff; box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+        
+        .cart-summary { display: flex; flex-direction: column; align-items: stretch; padding: 30px 20px 20px 20px; margin-top: 10px; border-top: 2px solid rgba(163, 255, 18, 0.2); }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px; color: var(--text-secondary); }
+        .summary-total { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; margin-top: 5px; border-top: 1px dashed rgba(255,255,255,0.2); }
+        .total-price { font-size: 32px; font-family: var(--font-heading); color: var(--primary); text-shadow: var(--glow); line-height: 1.2; }
+        .empty-cart-msg { text-align: center; color: var(--text-secondary); padding: 60px; font-size: 18px; display: flex; flex-direction: column; align-items: center; gap: 15px;}
+        .empty-cart-msg i { font-size: 48px; color: rgba(255,255,255,0.2); }
+        
+        .wishlist-section { padding-top: 60px; padding-bottom: 60px; }
+        .wishlist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
+        @media(max-width: 900px) { .wishlist-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(max-width: 600px) { .wishlist-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="text-decoration: none;">GAMEVERSE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Store</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="guide.html">Guide</a></li>
+        </ul>
+        <button id="nav-login-btn" class="btn-primary glow">Login</button>
+    </nav>
+
+    <main class="container user-container">
+        <!-- Left: Profile -->
+        <aside class="glass-panel profile-card reveal active">
+            <div id="user-avatar" class="avatar">?</div>
+            <h2 id="user-name" style="margin-bottom: 5px; color: #fff; font-family: var(--font-heading);">Not Logged In</h2>
+            <p id="member-date" style="color: var(--text-secondary); margin-bottom: 10px; font-size: 14px;"></p>
+            
+            <div id="user-extra" style="display: none;">
+                <div class="xp-box">
+                    <div class="xp-header">
+                        <span>LEVEL 14</span>
+                        <span>850 / 1000 XP</span>
+                    </div>
+                    <div class="xp-bar-bg">
+                        <div class="xp-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="wallet-box">
+                    <h3>Wallet Balance</h3>
+                    <span class="price">$45.50</span>
+                    <button class="btn-small glow-neon" onclick="window.showToast?.('Redirecting to Payment Gateway...', 'success')">Add Funds</button>
+                </div>
+
+                <div class="social-box">
+                    <h3 style="text-align: center;">Linked Accounts</h3>
+                    <div class="social-icons">
+                        <i class='bx bxl-steam' onclick="window.showToast?.('Steam Synced', 'success')"></i>
+                        <i class='bx bxl-playstation' onclick="window.showToast?.('PSN Synced', 'success')"></i>
+                        <i class='bx bxl-xbox' onclick="window.showToast?.('Xbox Live Synced', 'success')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button id="logout-btn" class="btn-secondary glow-neon" style="border-color: #EF4444; color: #EF4444; width: 100%; display: none; margin-top: 20px;">Logout</button>
+        </aside>
+
+        <!-- Right: Cart -->
+        <div class="glass-panel reveal active">
+            <h2 style="margin-bottom: 10px; color: #fff; font-family: var(--font-heading); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">MY CART</h2>
+            <div id="cart-items-container">
+                <!-- Cart items will be rendered here -->
+            </div>
+            <div class="cart-summary" id="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal-val">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Estimated Tax (8%)</span>
+                    <span id="tax-val">$0.00</span>
+                </div>
+                <div class="summary-total">
+                    <span style="color: #fff; font-size: 18px; font-weight: bold; text-transform: uppercase;">Final Total</span>
+                    <div class="total-price" id="final-total-val">$0.00</div>
+                </div>
+                <button id="checkout-btn" class="btn-primary glow-neon big" style="width: 100%; margin-top: 25px;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wishlist Section -->
+    <section class="container wishlist-section reveal active">
+        <h2 class="section-title">Your Wishlist</h2>
+        <div class="wishlist-grid" id="wishlist-grid">
+            <!-- Wishlist cards injected via JS -->
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal hidden">
+        <div class="auth-content glass-panel">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login">Login</button>
+                <button class="auth-tab" data-target="register">Register</button>
+            </div>
+            
+            <form id="form-login" class="auth-form active">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Login</button>
+            </form>
+            
+            <form id="form-register" class="auth-form hidden">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit" class="btn-primary glow-neon w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module">
+        import { gamesData } from './js/data.js';
+
+        const gameImages = {
+            'elden-ring': 'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png',
+            'god-of-war': 'https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png',
+            'ghost-of-tsushima': 'https://th.bing.com/th/id/R.2a61e945f3a7893ee5604706f1fc065e?rik=vOW3yC5g0Axmaw&pid=ImgRaw&r=0',
+            'valorant': 'https://tse4.mm.bing.net/th/id/OIP.DsPgUC3WT2WCqfqun0cYfAHaLH?w=720&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3',
+            'the-last-of-us': 'https://tse3.mm.bing.net/th/id/OIP.1Q-7y6KRsf3YCQpvte-w0wHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
+            'fifa-23': 'https://howdysports.com/wp-content/uploads/2022/10/fifa-23-cover-star-kylian-mbappe-psg-1-1.jpg',
+            'cyberpunk-2077': 'https://tse1.mm.bing.net/th/id/OIP.NSlU9gXGETC-UJGhdMRJUwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3',
+            'horizon-forbidden-west': 'https://th.bing.com/th/id/R.b31ee53b2c3b892b239c2dbf419e4e62?rik=AsaO34K2RLrYJg&pid=ImgRaw&r=0',
+            'gran-turismo-7': 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/02/gran-turismo-7-cover.jpg',
+            'spider-man': 'https://tse3.mm.bing.net/th/id/OIP.F_fTl_13omBA8PwfUgFNqQHaKl?rs=1&pid=ImgDetMain&o=7&rm=3',
+            'tears-of-steel': 'https://th.bing.com/th/id/OIP.nKSTj5Y4gGowHInuLw_tCQHaEK?rs=1&pid=ImgDetMain'
+        };
+
+        const wishlistTokens = ['fifa-23', 'spider-man', 'horizon-forbidden-west'];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = localStorage.getItem('gameverse_user');
+
+            if (!user) {
+                document.getElementById('user-name').textContent = 'Not Logged In';
+                document.getElementById('user-avatar').textContent = '?';
+                document.getElementById('member-date').textContent = 'Please login to track purchases';
+                document.getElementById('logout-btn').style.display = 'none';
+                document.getElementById('user-extra').style.display = 'none';
+                
+                const cartContainer = document.getElementById('cart-items-container');
+                cartContainer.innerHTML = '<div class="empty-cart-msg"><i class="bx bx-cart"></i><span>Please Login to view your cart items.</span></div>';
+                document.getElementById('cart-summary').style.display = 'none';
+                
+                renderWishlist();
+                return;
+            }
+
+            let storedCart = localStorage.getItem('gameverse_cart');
+            if (!storedCart || storedCart === '[]' || storedCart === 'null') {
+                localStorage.setItem('gameverse_cart', JSON.stringify(['god-of-war', 'cyberpunk-2077']));
+            }
+
+            document.getElementById('user-name').textContent = user.toUpperCase();
+            document.getElementById('user-avatar').textContent = user.charAt(0).toUpperCase();
+            document.getElementById('member-date').textContent = 'Member since: Oct 2025';
+            document.getElementById('user-extra').style.display = 'block';
+            document.getElementById('logout-btn').style.display = 'block';
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('gameverse_user');
+                window.location.reload(); 
+            });
+
+            renderCart();
+            renderWishlist();
+
+            document.getElementById('checkout-btn').addEventListener('click', () => {
+                localStorage.removeItem('gameverse_cart');
+                renderCart();
+                if (window.showToast) {
+                    window.showToast('Payment successful! $45.50 deducted from Wallet.', 'success');
+                }
+            });
+        });
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartSummary = document.getElementById('cart-summary');
+            
+            const subtotalText = document.getElementById('subtotal-val');
+            const taxText = document.getElementById('tax-val');
+            const finalTotalText = document.getElementById('final-total-val');
+            
+            const cartIds = JSON.parse(localStorage.getItem('gameverse_cart') || '[]');
+            cartItemsContainer.innerHTML = '';
+
+            if (cartIds.length === 0) {
+                cartItemsContainer.innerHTML = `<div class="empty-cart-msg"><i class="bx bx-cart"></i><span>Your cart is empty. Let's go grab some games!</span></div>`;
+                cartSummary.style.display = 'none';
+                return;
+            }
+
+            let total = 0;
+
+            cartIds.forEach((id) => {
+                const game = gamesData[id];
+                if (!game) return;
+
+                let priceVal = 0;
+                if (game.price && game.price !== 'Free to Play' && game.price !== 'Free') {
+                    const numstr = game.price.replace(/[^0-9.]/g, '');
+                    priceVal = parseFloat(numstr) || 0;
+                }
+                total += priceVal;
+
+                const thumb = gameImages[id] || gameImages['tears-of-steel'];
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item reveal active';
+                itemDiv.innerHTML = `
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <img class="cart-item-img" src="${thumb}" alt="${game.title}">
+                        <div class="cart-info">
+                            <h3 class="cart-title">${game.title}</h3>
+                            <span class="cart-price">${game.price}</span>
+                        </div>
+                        <div class="cart-actions">
+                            <button class="btn-remove" data-id="${id}"><i class='bx bx-trash'></i> Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            document.querySelectorAll('.btn-remove').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const removeId = e.target.closest('.btn-remove').getAttribute('data-id');
+                    let currentCart = JSON.parse(localStorage.getItem('gameverse_cart') || '[]');
+                    currentCart = currentCart.filter(cid => cid !== removeId);
+                    localStorage.setItem('gameverse_cart', JSON.stringify(currentCart));
+                    renderCart();
+                    if (window.showToast) {
+                        window.showToast('Item removed', 'success');
+                    }
+                });
+            });
+
+            let tax = total * 0.08;
+            let finalTotal = total + tax;
+
+            subtotalText.textContent = `$${total.toFixed(2)}`;
+            taxText.textContent = `$${tax.toFixed(2)}`;
+            finalTotalText.textContent = `$${finalTotal.toFixed(2)}`;
+            
+            cartSummary.style.display = 'flex';
+        }
+
+        function renderWishlist() {
+            const wishlistContainer = document.getElementById('wishlist-grid');
+            wishlistContainer.innerHTML = '';
+            
+            wishlistTokens.forEach(id => {
+                const game = gamesData[id];
+                if (!game) return;
+                
+                const thumb = gameImages[id] || gameImages['tears-of-steel'];
+                const card = document.createElement('div');
+                card.className = 'game-card tilt-card';
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${thumb}" alt="${game.title}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${game.title}</h3>
+                        <div class="card-meta">
+                            <span class="price">${game.price}</span>
+                            <button class="btn-small glow-neon" onclick="window.location.href='detail.html?id=${id}'">View</button>
+                        </div>
+                    </div>
+                `;
+                wishlistContainer.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
